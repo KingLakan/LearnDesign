@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 2.8.9)
 project (statemachine)
-
+#change on lakanlapp
+SET(CMAKE_CXX_FLAGS "-std=c++11")
 
 #headers
 include_directories(include)

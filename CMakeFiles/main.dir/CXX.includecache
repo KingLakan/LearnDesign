@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/lakan/Programming/StateMachine/include/StateMachine.h
+iostream
+-
+
+/home/lakan/Programming/StateMachine/include/WindowSingleton.h
+SDL2/SDL.h
+/home/lakan/Programming/StateMachine/include/SDL2/SDL.h
+
+/home/lakan/Programming/StateMachine/src/main.cpp
+iostream
+-
+chrono
+-
+thread
+-
+../include/StateMachine.h
+/home/lakan/Programming/StateMachine/include/StateMachine.h
+SDL2/SDL.h
+/home/lakan/Programming/StateMachine/src/SDL2/SDL.h
+stdio.h
+-
+../include/WindowSingleton.h
+/home/lakan/Programming/StateMachine/include/WindowSingleton.h
+

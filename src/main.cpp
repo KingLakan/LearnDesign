@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include "../include/WindowSingleton.h"
 //bajskorv
+
 //Screen dimension constants
 const int SCREEN_WIDTH = 640;
 const int SCREEN_HEIGHT = 480;
@@ -43,8 +44,8 @@ bool init()
 	else
 	{
 		//Create window
-		 //gWindow = SDL_CreateWindow( "SDL Tutorial", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
-		  WindowSingleton* gWindow;
+		 gWindow = SDL_CreateWindow( "SDL Tutorial", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
+		  //WindowSingleton* gWindow;
 		  //SDL_Window* gWindow = gWindow->getWindow();
 		
 		
@@ -56,7 +57,7 @@ bool init()
 		else
 		{
 			//Get window surface
-			gScreenSurface = SDL_GetWindowSurface( gWindow->getWindow());
+			gScreenSurface = SDL_GetWindowSurface( gWindow);
 		}
 	}
 
@@ -115,7 +116,7 @@ int main(int argc, char *argv[])
 			SDL_BlitSurface( gHelloWorld, NULL, gScreenSurface, NULL );
 			
 			//Update the surface
-			SDL_UpdateWindowSurface( gWindow->getWindow());
+			SDL_UpdateWindowSurface( gWindow);
 
 			//Wait two seconds
 			SDL_Delay( 2000 );
