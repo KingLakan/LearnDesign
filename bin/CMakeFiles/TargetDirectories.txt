@@ -1,3 +1,0 @@
-/home/lakan/Programming/Statemachines/bin/CMakeFiles/rebuild_cache.dir
-/home/lakan/Programming/Statemachines/bin/CMakeFiles/main.dir
-/home/lakan/Programming/Statemachines/bin/CMakeFiles/edit_cache.dir
