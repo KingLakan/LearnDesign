@@ -4,7 +4,7 @@
 #include "../include/StateMachine.h"
 #include "SDL2/SDL.h"
 #include <stdio.h>
-#include "../include/WindowSingleton.h"
+
 //bajskorv
 
 //Screen dimension constants
