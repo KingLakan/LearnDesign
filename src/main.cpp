@@ -4,6 +4,7 @@
 #include "../include/StateMachine.h"
 #include "SDL2/SDL.h"
 #include <stdio.h>
+#include <../include/SDLWindow.h>
 
 //bajskorv
 
@@ -44,7 +45,9 @@ bool init()
 	else
 	{
 		//Create window
-		 gWindow = SDL_CreateWindow( "SDL Tutorial", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
+	  	
+		gWindow =  SDLWindow::getInstance();
+		//gWindow = SDL_CreateWindow( "SDL Tutorial", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
 		  //WindowSingleton* gWindow;
 		  //SDL_Window* gWindow = gWindow->getWindow();
 		

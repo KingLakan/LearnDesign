@@ -9,18 +9,17 @@ class SDLWindow
 private: 
     
     //he compiler provides an implicit inline default constructor.används om contructor inte har input och du vll ha default värden
-    int SCREEN_WIDTH {640};
-    int SCREEN_HEIGHT {480};
+    const static int SCREEN_WIDTH {640};
+    const static int SCREEN_HEIGHT {480};
+    SDLWindow();
 
-    SDL_Window* gWindow;
-    SDL_Surface* gScreenSurface;
-    SDL_Surface* gHelloWorld;
+    static SDL_Window* gWindow;
 
 public: 
-    SDLWindow();
-    bool init(int Width, int Height);
-    bool loadMeadia(SDL_Window*,SDL_Surface*);
-    void close();
+    
+     static SDL_Window* getInstance();
+
+
 
 
 }; 
