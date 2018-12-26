@@ -13,13 +13,7 @@ InitMedia::InitMedia()
 	}
 	else
 	{
-		//Create window
-	  	
-		  //gWindow =  SDLWindow::getInstance();//using singleton
-		//gWindow = SDL_CreateWindow( "SDL Tutorial", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
-		  //WindowSingleton* gWindow;
-		  //SDL_Window* gWindow = gWindow->getWindow();
-		
+
 		
 		if( SDLWindow::getInstance() == NULL )
 		{
@@ -28,9 +22,13 @@ InitMedia::InitMedia()
 		}
 		else
 		{
+            //20181226 SKAPA Det här som ett interface?, typ InitMedia(WindowChangerInterface) WindowChanger -> UseThisWindowchagner
 			//Get window surface
 			 gScreenSurface = SDL_GetWindowSurface( SDLWindow::getInstance());
-		}
+             //Create renderer for window
+
+            
+    	}
 	}
 
 }

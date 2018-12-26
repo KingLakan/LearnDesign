@@ -9,7 +9,7 @@ class Media
 protected:
 SDL_Surface* gScreenSurface {NULL};
 SDL_Surface* gHelloWorld {NULL} ;
-
+SDL_Renderer* gRenderer {NULL};
 
 }; 
 
