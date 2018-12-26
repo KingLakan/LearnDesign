@@ -9,6 +9,7 @@ class UpdateMedia : protected Media
 public:
 UpdateMedia();
 void update(SDL_Surface*,SDL_Surface*);
+void close(SDL_Surface*);
 
 }; 
 

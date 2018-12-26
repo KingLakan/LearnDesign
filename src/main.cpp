@@ -17,12 +17,33 @@ int main(int argc, char *argv[])
 
 		InitMedia test1;
 		LoadMedia test2;
-		UpdateMedia test3;
-		
-		SDL_Surface* useSurface = test1.getInitializedSurface();
-		SDL_Surface* setImgSurface = test2.getLoadedImgSurface();
-		
-		test3.update(useSurface,setImgSurface);
+
+            //Main loop flag
+            bool quit = false;
+
+            //Event handler
+            SDL_Event e;
+
+			SDL_Surface* useSurface = test1.getInitializedSurface();
+			SDL_Surface* setImgSurface = test2.getLoadedImgSurface();
+			UpdateMedia test3;
+			            //While application is running
+            while( !quit )
+            {
+				                //Handle events on queue
+                while( SDL_PollEvent( &e ) != 0 )
+                {
+                    //User requests quit
+                    if( e.type == SDL_QUIT )
+                    {	
+				            quit = true;
+                    }
+                }
+			
+			test3.update(useSurface,setImgSurface);
+			}
+			test3.close(setImgSurface);
+			
 
 
 
