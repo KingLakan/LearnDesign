@@ -13,12 +13,19 @@
 //}
 
 // Prova att ta bort construktorn från state 1 och 2 efter ändringen ovan
-State1::State1(){};
+State1::State1()
+{
+
+};
 
 
 void State1::transition(StateMachine* statemachine)
 {
     currentState();
+    
+    SDL_Texture* texture = loadMedia.getLoadedTexture2();
+    updateMedia.render(SDLWindow::getRenderInstance(),texture);
+    
     statemachine->setState(new State2());
     //statemachine ->setState(new State2());
 

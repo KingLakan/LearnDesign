@@ -3,6 +3,7 @@
 #include "../include/StateMachine.h"
 #include "../include/State1.h"
 
+
 //#include "/home/lakan/Programming/Statemachines/include/Num.h"
 
 //20181220  bygg om så att man ifrån main kallar på StateMachine(VilketStartState)
@@ -15,8 +16,12 @@
 StateMachine::StateMachine(): _state(new State1())
 { 
     std::cout <<"wtf";
+    
+
     //_state = new State1();//skickar statemachine till konstruktorn för State1 (som blire start state)    
 }
+
+
 
 void StateMachine::setState(State* state)
 {

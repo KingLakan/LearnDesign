@@ -10,9 +10,10 @@ public:
 LoadMedia();
 SDL_Surface* getLoadedImgSurface();
 SDL_Surface* getLoaded();
-SDL_Texture* getLoadedTexture(SDL_Renderer*);
+SDL_Texture* getLoadedTexture();
 
-
+SDL_Surface* getLoadedImgSurface2();
+SDL_Texture* getLoadedTexture2();
 }; 
 
 #endif

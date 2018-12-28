@@ -10,15 +10,15 @@
 #include <../include/UpdateMedia.h>
 
 
-
+	
 int main(int argc, char *argv[]) 
 {
 		InitMedia initMedia;
 		LoadMedia loadMedia;
 		UpdateMedia updateMedia;
 
-		SDL_Renderer* renderer = initMedia.getInitializedRenderer();
-		SDL_Texture* texture = loadMedia.getLoadedTexture(renderer);
+		//SDL_Renderer* renderer = initMedia.getInitializedRenderer();
+		SDL_Texture* texture = loadMedia.getLoadedTexture();
             
 			//Main loop flag
             bool quit = false;
@@ -37,13 +37,13 @@ int main(int argc, char *argv[])
 				            quit = true;
                     }
                 }
-			updateMedia.render(renderer,texture);
+			updateMedia.render(SDLWindow::getRenderInstance(),texture);
 			}
-			updateMedia.close();
+			//updateMedia.close();
 			
 	std::cout << "Hello Easy C++ project!" << std::endl;
 	StateMachine n_point;
-	int seconds = 1000;	
+	int seconds = 100;	
 
 	while(1)
 	{

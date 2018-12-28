@@ -14,10 +14,12 @@ private:
     SDLWindow();
 
     static SDL_Window* gWindow;
+    static SDL_Renderer* gRenderer;
 
 public: 
     
      static SDL_Window* getInstance();
+     static SDL_Renderer* getRenderInstance();
 
 
 

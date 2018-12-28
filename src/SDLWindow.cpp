@@ -6,6 +6,7 @@ SDLWindow::SDLWindow(){};
 
 //Null because instance will be initialized on demand
 SDL_Window* SDLWindow::gWindow = 0;
+SDL_Renderer* SDLWindow::gRenderer = 0;
 
 SDL_Window* SDLWindow::getInstance()
 {
@@ -17,3 +18,14 @@ SDL_Window* SDLWindow::getInstance()
 
     return gWindow;
 } 
+
+SDL_Renderer* SDLWindow::getRenderInstance()
+{
+    if(gRenderer == 0)
+    { 
+        gRenderer = SDL_CreateRenderer( gWindow, -1, SDL_RENDERER_ACCELERATED );
+    }
+
+    return gRenderer;
+} 
+

@@ -3,6 +3,9 @@
 
 //#include "../include/State.h"
 #include <iostream>
+#include <../include/InitMedia.h>
+#include <../include/LoadMedia.h>
+#include <../include/UpdateMedia.h>
 
 class State;
 
@@ -16,7 +19,6 @@ class StateMachine
   StateMachine();
   void setState(State* state);
   void run();
-
 
 }; 
 

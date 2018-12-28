@@ -10,6 +10,10 @@ State2::State2(){};
 void State2::transition(StateMachine* statemachine)
 {
     currentState();
+    
+    SDL_Texture* texture = loadMedia.getLoadedTexture();
+    updateMedia.render(SDLWindow::getRenderInstance(),texture);
+
     //statemachine ->setState(new State1(_statemachine));
     statemachine ->setState(new State1());
 };

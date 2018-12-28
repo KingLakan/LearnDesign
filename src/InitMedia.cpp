@@ -22,8 +22,9 @@ InitMedia::InitMedia()
 		else
 		{
 			//Create renderer for window
-			gRenderer = SDL_CreateRenderer( SDLWindow::getInstance(), -1, SDL_RENDERER_ACCELERATED );
-			if( gRenderer == NULL )
+			//gRenderer = SDL_CreateRenderer( SDLWindow::getInstance(), -1, SDL_RENDERER_ACCELERATED );
+			gRenderer= SDLWindow::getRenderInstance();
+            if( gRenderer == NULL )
 			 {
 				  printf( "Renderer could not be created! SDL Error: %s\n", SDL_GetError() );
 				   success = false;
