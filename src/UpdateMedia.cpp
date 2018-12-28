@@ -22,6 +22,17 @@ void UpdateMedia::update(SDL_Surface* useInitializedSurface,SDL_Surface* useLoad
     }
     
 }
+
+void UpdateMedia::render(SDL_Renderer* gRenderer)
+{
+	 //Clear screen 
+	 SDL_RenderClear( gRenderer );
+	  //Render texture to screen
+	SDL_RenderCopy( gRenderer, gTexture, NULL, NULL );
+	 //Update screen
+	  SDL_RenderPresent( gRenderer );
+}
+
     //SKALL LIGGA UNDER CLOSED
 	void UpdateMedia::close(SDL_Surface* useLoadedImgSurface)
 	{

@@ -9,6 +9,9 @@ class LoadMedia : protected Media
 public:
 LoadMedia();
 SDL_Surface* getLoadedImgSurface();
+SDL_Texture* getLoadedTexture(SDL_Renderer*);
+
+
 }; 
 
 #endif

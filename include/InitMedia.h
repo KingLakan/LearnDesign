@@ -9,6 +9,7 @@ class InitMedia : protected Media
 public:
 InitMedia();
 SDL_Surface* getInitializedSurface();
+SDL_Renderer* getInitializedRenderer();
 
 }; 
 

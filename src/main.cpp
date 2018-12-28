@@ -25,7 +25,10 @@ int main(int argc, char *argv[])
             SDL_Event e;
 
 			SDL_Surface* useSurface = test1.getInitializedSurface();
+			SDL_Renderer* useRenderer = test1.getInitializedRenderer();
 			SDL_Surface* setImgSurface = test2.getLoadedImgSurface();
+			SDL_Texture* setTexture = test2.getLoadedTexture(useRenderer);
+			
 			UpdateMedia test3;
 			            //While application is running
             while( !quit )
@@ -40,7 +43,8 @@ int main(int argc, char *argv[])
                     }
                 }
 			
-			test3.update(useSurface,setImgSurface);
+			//test3.update(useSurface,setImgSurface);
+			test3.render(useRenderer);
 			}
 			test3.close(setImgSurface);
 			

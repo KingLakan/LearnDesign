@@ -1,4 +1,5 @@
 #include "../include/InitMedia.h" 
+#include <SDL2/SDL_image.h>
 
 InitMedia::InitMedia()
 {
@@ -22,9 +23,30 @@ InitMedia::InitMedia()
 		}
 		else
 		{
-            //20181226 SKAPA Det här som ett interface?, typ InitMedia(WindowChangerInterface) WindowChanger -> UseThisWindowchagner
+			//Create renderer for window
+			gRenderer = SDL_CreateRenderer( SDLWindow::getInstance(), -1, SDL_RENDERER_ACCELERATED );
+
+			if( gRenderer == NULL )
+			 {
+				  printf( "Renderer could not be created! SDL Error: %s\n", SDL_GetError() );
+				   success = false;
+			} else 
+			{ 
+				//Initialize renderer color
+				SDL_SetRenderDrawColor( gRenderer, 0xFF, 0xFF, 0xFF, 0xFF ); 
+
+				 //Initialize PNG loading 
+				 int imgFlags = IMG_INIT_PNG;
+				  if( !( IMG_Init( imgFlags ) & imgFlags ) ) 
+				  {
+					   printf( "SDL_image could not initialize! SDL_image Error: %s\n", IMG_GetError() );
+					    success = false; 
+					}
+
+			}
+				//20181226 SKAPA Det här som ett interface?, typ InitMedia(WindowChangerInterface) WindowChanger -> UseThisWindowchagner
 			//Get window surface
-			 gScreenSurface = SDL_GetWindowSurface( SDLWindow::getInstance());
+			// gScreenSurface = SDL_GetWindowSurface( SDLWindow::getInstance());
              //Create renderer for window
 
             
@@ -35,5 +57,12 @@ InitMedia::InitMedia()
 
 SDL_Surface* InitMedia::getInitializedSurface()
 {
-    return gScreenSurface;
+	//gScreenSurface = SDL_GetWindowSurface( SDLWindow::getInstance());
+    
+	//return gScreenSurface;
+}
+
+SDL_Renderer* InitMedia::getInitializedRenderer()
+{
+	return gRenderer;
 }
