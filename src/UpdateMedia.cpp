@@ -23,7 +23,7 @@ void UpdateMedia::update(SDL_Surface* useInitializedSurface,SDL_Surface* useLoad
     
 }
 
-void UpdateMedia::render(SDL_Renderer* gRenderer)
+void UpdateMedia::render(SDL_Renderer* gRenderer, SDL_Texture* gTexture)
 {
 	 //Clear screen 
 	 SDL_RenderClear( gRenderer );

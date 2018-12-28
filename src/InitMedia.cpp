@@ -46,7 +46,7 @@ InitMedia::InitMedia()
 			}
 				//20181226 SKAPA Det här som ett interface?, typ InitMedia(WindowChangerInterface) WindowChanger -> UseThisWindowchagner
 			//Get window surface
-			// gScreenSurface = SDL_GetWindowSurface( SDLWindow::getInstance());
+			 gScreenSurface = SDL_GetWindowSurface( SDLWindow::getInstance());
              //Create renderer for window
 
             
@@ -59,7 +59,7 @@ SDL_Surface* InitMedia::getInitializedSurface()
 {
 	//gScreenSurface = SDL_GetWindowSurface( SDLWindow::getInstance());
     
-	//return gScreenSurface;
+	return gScreenSurface;
 }
 
 SDL_Renderer* InitMedia::getInitializedRenderer()
