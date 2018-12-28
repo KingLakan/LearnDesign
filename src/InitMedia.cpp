@@ -14,8 +14,6 @@ InitMedia::InitMedia()
 	}
 	else
 	{
-
-		
 		if( SDLWindow::getInstance() == NULL )
 		{
 			printf( "Window could not be created! SDL_Error: %s\n", SDL_GetError() );
@@ -25,7 +23,6 @@ InitMedia::InitMedia()
 		{
 			//Create renderer for window
 			gRenderer = SDL_CreateRenderer( SDLWindow::getInstance(), -1, SDL_RENDERER_ACCELERATED );
-
 			if( gRenderer == NULL )
 			 {
 				  printf( "Renderer could not be created! SDL Error: %s\n", SDL_GetError() );
@@ -34,7 +31,6 @@ InitMedia::InitMedia()
 			{ 
 				//Initialize renderer color
 				SDL_SetRenderDrawColor( gRenderer, 0xFF, 0xFF, 0x00, 0x00 ); 
-
 				 //Initialize PNG loading 
 				 int imgFlags = IMG_INIT_PNG;
 				  if( !( IMG_Init( imgFlags ) & imgFlags ) ) 

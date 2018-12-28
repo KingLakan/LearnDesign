@@ -13,27 +13,22 @@
 
 int main(int argc, char *argv[]) 
 {
-
-
 		InitMedia initMedia;
 		LoadMedia loadMedia;
+		UpdateMedia updateMedia;
 
-            //Main loop flag
+		SDL_Renderer* renderer = initMedia.getInitializedRenderer();
+		SDL_Texture* texture = loadMedia.getLoadedTexture(renderer);
+            
+			//Main loop flag
             bool quit = false;
-
             //Event handler
             SDL_Event e;
-
-			//SDL_Surface* useSurface = test1.getInitializedSurface();
-			SDL_Renderer* renderer = initMedia.getInitializedRenderer();
-			//SDL_Surface* setImgSurface = test2.getLoadedImgSurface(useSurface);
-			SDL_Texture* texture = loadMedia.getLoadedTexture(renderer);
 			
-			UpdateMedia test3;
-			            //While application is running
+			//While application is running
             while( !quit )
             {
-				                //Handle events on queue
+				//Handle events on queue
                 while( SDL_PollEvent( &e ) != 0 )
                 {
                     //User requests quit
@@ -42,15 +37,10 @@ int main(int argc, char *argv[])
 				            quit = true;
                     }
                 }
-			
-			//test3.update(useSurface,setImgSurface);
-			test3.render(renderer,texture);
+			updateMedia.render(renderer,texture);
 			}
-			//test3.close(setImgSurface);
+			updateMedia.close();
 			
-
-
-
 	std::cout << "Hello Easy C++ project!" << std::endl;
 	StateMachine n_point;
 	int seconds = 1000;	
