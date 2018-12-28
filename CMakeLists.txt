@@ -6,7 +6,7 @@ SET(CMAKE_CXX_FLAGS "-std=c++11")
 #headers
 include_directories(include)
 
-#hm
+#sätter sökväg till macro som inkluderas (macro lägger t.ex till SDL2_image)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}")
 
 find_package(SDL2 REQUIRED)

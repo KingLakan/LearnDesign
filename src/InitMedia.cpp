@@ -33,7 +33,7 @@ InitMedia::InitMedia()
 			} else 
 			{ 
 				//Initialize renderer color
-				SDL_SetRenderDrawColor( gRenderer, 0xFF, 0xFF, 0xFF, 0xFF ); 
+				SDL_SetRenderDrawColor( gRenderer, 0xFF, 0xFF, 0x00, 0x00 ); 
 
 				 //Initialize PNG loading 
 				 int imgFlags = IMG_INIT_PNG;
@@ -46,7 +46,7 @@ InitMedia::InitMedia()
 			}
 				//20181226 SKAPA Det här som ett interface?, typ InitMedia(WindowChangerInterface) WindowChanger -> UseThisWindowchagner
 			//Get window surface
-			 gScreenSurface = SDL_GetWindowSurface( SDLWindow::getInstance());
+			 //gScreenSurface = SDL_GetWindowSurface( SDLWindow::getInstance());
              //Create renderer for window
 
             
@@ -55,9 +55,9 @@ InitMedia::InitMedia()
 
 }
 
-SDL_Surface* InitMedia::getInitializedSurface()
+SDL_Surface* InitMedia::getScreenSurface()
 {
-	//gScreenSurface = SDL_GetWindowSurface( SDLWindow::getInstance());
+	gScreenSurface = SDL_GetWindowSurface( SDLWindow::getInstance());
     
 	return gScreenSurface;
 }

@@ -15,8 +15,8 @@ int main(int argc, char *argv[])
 {
 
 
-		InitMedia test1;
-		LoadMedia test2;
+		InitMedia initMedia;
+		LoadMedia loadMedia;
 
             //Main loop flag
             bool quit = false;
@@ -24,10 +24,10 @@ int main(int argc, char *argv[])
             //Event handler
             SDL_Event e;
 
-			SDL_Surface* useSurface = test1.getInitializedSurface();
-			SDL_Renderer* useRenderer = test1.getInitializedRenderer();
+			//SDL_Surface* useSurface = test1.getInitializedSurface();
+			SDL_Renderer* renderer = initMedia.getInitializedRenderer();
 			//SDL_Surface* setImgSurface = test2.getLoadedImgSurface(useSurface);
-			SDL_Texture* setTexture = test2.getLoadedTexture(useRenderer);
+			SDL_Texture* texture = loadMedia.getLoadedTexture(renderer);
 			
 			UpdateMedia test3;
 			            //While application is running
@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
                 }
 			
 			//test3.update(useSurface,setImgSurface);
-			test3.render(useRenderer,setTexture);
+			test3.render(renderer,texture);
 			}
 			//test3.close(setImgSurface);
 			
